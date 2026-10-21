@@ -50,9 +50,11 @@ This project classifies forum discussions from Mountain Project, a public rock c
 **Definition:** Argues mechanics, specs, weights, certifications, or comparative trade-offs.
 
 **Example 1:**
+
 > "Both the Pinch and RIG are EN 12841-C (work positioning and descending a human) and 15151-1 (for belaying and descending only, requires a hand on the brake), unlike most assisted belay devices which are just 15151-1. In the rope access world, the RIG's lack of anti-panic has made it a bit harder to market, because it's way the hell easier to use than an ID but for less experienced techs it's less safe."
 
 **Example 2:**
+
 > "Petzl spirit 45g Plenty of options sub 50g why would someone not use a compact lightweight carabiner for this? there isn’t “the” carabiner the grigri requires. They all work. And you probably already have one… It doesn’t really matter anyway but what you said is just not true. The pinch is significantly (>10%) heavier in every scenario."
 
 ### `field_experience`
@@ -60,9 +62,11 @@ This project classifies forum discussions from Mountain Project, a public rock c
 **Definition:** First-person reports of using/handling the gear in gyms or crags.
 
 **Example 1:**
+
 > "I got to play hands on with one today. It’s cool! The direct attachment to the belay loop is interesting, I see some advantages with this since removes any carabiner failure modes (although it may show to have its own). You can still use a crab if you want though. What’s really cool is that you can orient it in several different ways to create the best option to belay based on your anchor of preferred belay style. ETA: pat, yes, the direct harness attachment is locked. I didn’t see an obvious way for it to come undone accidentally, and it’s slightly awkward to get it on and off the belay loop. The friction teeth seem like a good edition. It does come with an anti panic handle like the dreaded GRIGRI+, but it comes with a tool to deactivate it. It feeds great without needing to touch the device at all."
 
 **Example 2:**
+
 > "Finally got some gym time in with the pinch, I'm stoked. I consider myself a strong grigri proponent but this feeds noticeably smoother. I mainly used it in the direct attach configuration (no carabiner) and appreciated the extra throw distance (though not having a carabiner for the device to flop around on was the best part) Lowering felt slightly more scrunched due to this, but most likely just an ergonomics thing I'll get used to and never think about again after a few sessions."
 
 ### `chatter`
@@ -70,9 +74,11 @@ This project classifies forum discussions from Mountain Project, a public rock c
 **Definition:** Quick questions, purchase availability, one-line opinions, jokes, and thread-drift.
 
 **Example 1:**
+
 > "Anyone seen the pinch or ohm for sale yet?"
 
 **Example 2:**
+
 > "My brother in Christ, let me introduce you to the wonderful world of manscaping. ;-)"
 
 ### The hardest boundary
@@ -88,43 +94,42 @@ If the writer explicitly reports hands-on, physical use or trial of the device i
 
 **Where the posts came from:** Mountain Project Gear Discussion Forum (specifically the multi-page public thread evaluating the Edelrid Pinch, Petzl Grigri/Rig, and assisted braking belay devices).
 
-**How I labelled them:** <!-- Cold first? Pre-labelled with AI and corrected?
-Say so plainly — the disclosure is required, not penalised. -->
+**How I labelled them:** I labelled the first 20 posts cold without assistance to establish ground-truth intuition and operationalize boundary rules. The remaining 185 posts were pre-labelled with AI assistance and then reviewed by me individually for the most part.
 
 **Counts per label:**
 
-| Label | Count | Share |
-|---|---|---|
-|  |  |  |
-|  |  |  |
-|  |  |  |
-| **Total** |  | 100% |
+| Label                  | Count | Share |
+| ---------------------- | ----- | ----- |
+| `chatter`            | 109   | 53.2% |
+| `technical_analysis` | 58    | 28.3% |
+| `field_experience`   | 38    | 18.5% |
+| **Total**        | 205   | 100%  |
 
 **Three hard cases**
 
-<!-- Any post that made you pause: what it was, which two labels it could have
-     been, and what you chose. These are worth more than the easy 190. -->
-
 **1.**
-> *The post:*
+
+> *The post:* "You’re right but you’re not. I am pretty sure it is no real competition for the grigri, being heavier (175 vs 240g), looking weird, probably being more expensive (apparently 100€ in the one European shop that already has it listed vs 65 for a grigri 3 in the same shop)... This turned into a rant. I’m sorry. Maybe it handles like a dream. Then it’s probably great (but still ugly)."
 >
-> *Could have been:*
+> *Could have been:* `chatter` vs. `technical_analysis`
 >
-> *I chose, because:*
+> *I chose, because:* `technical_analysis`. Although the writer acknowledges "This turned into a rant" and uses emotional slang ("ugly", "joke"), the core argument is carried by load-bearing factual specs: comparing manufacturer weights (175 vs 240g) and retail pricing (100€ vs 65€).
 
 **2.**
-> *The post:*
+
+> *The post:* "Have been using one recently. Feels well-made as you’d expect from Edelrid Paying out slack is smoother than any of the GriGris. This alone is almost enough to make me consider getting one. The no carabiner attachment feels weird to start with but you rapidly get used to it, including racking it on your harness... The no carabiner attachment doesn’t work with a beefy (>3/4”) belay loop as you might find on some metolius harnesses. The edges of the attachment plates feel like they might cause wear to fabric belay loops..."
 >
-> *Could have been:*
+> *Could have been:* `technical_analysis` vs. `field_experience`
 >
-> *I chose, because:*
+> *I chose, because:* `field_experience`. The post contains detailed hardware dimensions and wear analysis (`>3/4"` belay loop clearances), but under our hardest boundary rule, explicit first-person handling and crag trial ("Have been using one recently", "racking it on your harness") makes it `field_experience`.
 
 **3.**
-> *The post:*
+
+> *The post:* "So I'm more positive about clipping directly to the belay loop. Even with a Rhino locker on my GriGri, I occasionally get it cross loaded. After a few times, I figured out how to attach it smoothly. When feeding for a clip, I've used a technique with the GriGri where I hover my thumb over the brake lever, without hooking my index finger under the lip. This works better with the Pinch, as it's more stable..."
 >
-> *Could have been:*
+> *Could have been:* `technical_analysis` vs. `field_experience`
 >
-> *I chose, because:*
+> *I chose, because:* `field_experience`. While it explains anti-cross-loading mechanics, the judgment is grounded in tactile first-person belaying habits and thumb positioning tested directly by the author.
 
 ---
 
@@ -134,15 +139,11 @@ Say so plainly — the disclosure is required, not penalised. -->
 
 **Base model:**
 
-**Settings:** <!-- epochs, learning rate, batch size, seed -->
+**Settings:** 
 
 **Anything I changed from the defaults, and why:**
 
-**Split sizes:** <!-- train / val / test, and per-label counts in the test
-split. If a label had fewer than about 8 in test, say so — it explains a lot
-of next unit's variance. -->
-
-
+**Split sizes:** 
 
 ---
 
@@ -181,22 +182,22 @@ of next unit's variance. -->
 <!-- Both models on the same posts. `python baseline.py --trained results.json`
      prints this table for you. -->
 
-| Measure | Baseline | Trained | Difference |
-|---|---|---|---|
-| Overall accuracy |  |  |  |
-| Macro F1 |  |  |  |
-| F1 — `label_one` |  |  |  |
-| F1 — `label_two` |  |  |  |
+| Measure             | Baseline | Trained | Difference |
+| ------------------- | -------- | ------- | ---------- |
+| Overall accuracy    |          |         |            |
+| Macro F1            |          |         |            |
+| F1 — `label_one` |          |         |            |
+| F1 — `label_two` |          |         |            |
 
 **What I predicted before I looked:**
+
 <!-- Milestone 1 asks you to write this BEFORE seeing the trained numbers. A
      prediction made afterwards isn't one. -->
 
 **What the gap actually means:**
+
 <!-- If the baseline matched your trained model, your fine-tuning added
      nothing — and that is a real finding, not a failure. Say it plainly. -->
-
-
 
 ---
 
@@ -206,12 +207,12 @@ of next unit's variance. -->
      spread table; the Target and Verdict columns are yours. -->
 
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
-|---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| --------- | ------ | ------- | ------ | --------- | ------- |
+| 1.        |        |         |        |           |         |
+| 2.        |        |         |        |           |         |
+| 3.        |        |         |        |           |         |
+| 4.        |        |         |        |           |         |
+| 5.        |        |         |        |           |         |
 
 ### Confusion matrix
 
@@ -219,17 +220,16 @@ of next unit's variance. -->
      An image of a matrix earns nothing. -->
 
 | true \ predicted |  |  |  |
-|---|---|---|---|
-| **** |  |  |  |
-| **** |  |  |  |
-| **** |  |  |  |
+| ---------------- | - | - | - |
+| ****             |  |  |  |
+| ****             |  |  |  |
+| ****             |  |  |  |
 
 **My biggest off-diagonal number, and what it means:**
+
 <!-- Not "the model made mistakes" — WHICH boundary it didn't learn, and which
      direction. "7 real analysis posts were called hot_take and only 3 went the
      other way" is a direction, not just an error rate. -->
-
-
 
 ---
 
@@ -239,12 +239,12 @@ of next unit's variance. -->
      all three seeds, not turn up sometimes. -->
 
 | # | Criterion | Target | Verdict | How I decided |
-|---|---|---|---|---|
-| 1 |  |  |  |  |
-| 2 |  |  |  |  |
-| 3 |  |  |  |  |
-| 4 |  |  |  |  |
-| 5 |  |  |  |  |
+| - | --------- | ------ | ------- | ------------- |
+| 1 |           |        |         |               |
+| 2 |           |        |         |               |
+| 3 |           |        |         |               |
+| 4 |           |        |         |               |
+| 5 |           |        |         |               |
 
 **Diagnoses**
 
@@ -256,8 +256,6 @@ of next unit's variance. -->
      ⚠️ Use your agreement report as evidence. It is the only instrument you
      have that can tell a LABELLING problem from a MODEL problem, and this
      section is graded on whether you used it that way. -->
-
-
 
 ---
 
@@ -292,6 +290,7 @@ of next unit's variance. -->
      what you did across your own 200. -->
 
 **1.**
+
 > *The post:*
 >
 > *Staff said / I said:*
@@ -301,6 +300,7 @@ of next unit's variance. -->
 > *Which pile:*
 
 **2.**
+
 > *The post:*
 >
 > *Staff said / I said:*
@@ -310,8 +310,6 @@ of next unit's variance. -->
 > *Which pile:*
 
 **What the pattern in my disagreements tells me:**
-
-
 
 ---
 
@@ -324,19 +322,17 @@ of next unit's variance. -->
 ### Run Log — After
 
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
-|---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| --------- | ------ | ------- | ------ | --------- | ------- |
+| 1.        |        |         |        |           |         |
+| 2.        |        |         |        |           |         |
+| 3.        |        |         |        |           |         |
+| 4.        |        |         |        |           |         |
+| 5.        |        |         |        |           |         |
 
 **Did it help, and how do I know:**
 
 <!-- If it didn't, say so. Relabelling that didn't help is a genuinely
      interesting result and earns full credit. -->
-
-
 
 ---
 
@@ -344,13 +340,10 @@ of next unit's variance. -->
 
 <!-- For each criterion still missed: what you'd do, and why you stopped. -->
 
-
-
 **The gap between what I meant my labels to capture and what the model
 learned:**
+
 <!-- Two sentences. Your confusion matrix is the evidence. -->
-
-
 
 <!-- ═════════════════════════════════════════════════════════════════════
 
