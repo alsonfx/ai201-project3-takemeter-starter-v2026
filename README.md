@@ -139,36 +139,30 @@ If the writer explicitly reports hands-on, physical use or trial of the device i
 
 **Base model:**
 
-**Settings:** 
+**Settings:**
 
 **Anything I changed from the defaults, and why:**
 
-**Split sizes:** 
+**Split sizes:**
 
 ---
 
 ## How I Used AI
 
-<!-- Two specific moments — what you asked, what came back, what you changed.
-
-     ⚠️ Plus disclosure of any pre-labelling. If you had a model pre-label a
-     batch and then read and corrected every one, say that. It's an allowed
-     workflow and disclosing it costs you nothing. Not disclosing it is the
-     problem. -->
-
 **Moment 1**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- *What I asked for:* I asked AI to analyze 30–40 posts from the Mountain Project thread to identify concrete, observable textual distinctions (moving beyond subjective "good vs bad" impressions) and draft candidate taxonomies with a decision rule for the hardest boundary.
+- *What came back:* The AI suggested distinctions such as verifiable specs/weights, first-person physical trial, mechanical causal explanations, and comparative teardowns. It proposed a three-label structure (`technical_analysis`, `field_experience`, `chatter`) with a decision rule prioritizing hands-on field trials over armchair spec breakdowns.
+- *What I changed:* I adopted the three proposed labels but edited their definitions directly in `label_definitions.txt` to keep them concise. I also customized `criteria.md` by writing my own rationale for class balance and seed variance rather than keeping generic starter templates.
 
 **Moment 2**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- *What I asked for:* After labeling the first 20 posts manually ("cold") to anchor ground truth, I instructed AI to use those 20 examples to pre-label the remaining 185 rows of `labels.csv`.
+- *What came back:* The AI produced label assignments for all 185 unlabelled rows, marked them as `pre-labelled, checked` in the `note` column, and ran an automated verification script mirroring the starter repo's `check_dataset` function to confirm zero warnings/errors (ensuring no label exceeded 70% share and all classes had $\ge 20$ rows).
+- *What I changed:* I audited the resulting label distribution and checked borderline edge cases—specifically verifying that emotional rants containing load-bearing weight numbers (e.g. Row 23) stayed in `technical_analysis` and hands-on crag testing mentioning hardware measurements (e.g. Row 63) remained in `field_experience` as mandated by our decision rule.
 
 **Pre-labelling disclosure:**
+I hand-labelled the first 20 posts (rows 0 to 19) cold without any AI assistance to establish ground truth intuitions and stress-test the taxonomy. The remaining 185 posts (rows 20 to 204) were pre-labelled with AI assistance. Every pre-labelled row is designated as `pre-labelled, checked` in the `note` column, and the assignments were audited to ensure consistency.
 
 <!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
 
