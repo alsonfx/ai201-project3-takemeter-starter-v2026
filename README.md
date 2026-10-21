@@ -39,59 +39,54 @@
 
 ## What This Does
 
-<!-- Your community, and what your classifier sorts posts into. Three or four
-     sentences. -->
-
-
+This project classifies forum discussions from Mountain Project, a public rock climbing community, specifically focusing on threads analyzing new climbing hardware and assisted braking belay devices. It sorts community posts into three categories: `technical_analysis` (objective mechanical breakdowns, specs, weight comparisons, and safety certifications), `field_experience` (first-person reports of hands-on physical testing and gym/crag usage), and `chatter` (logistical questions, banter, purchase availability, and casual one-line reactions). By distinguishing evidence-based gear analysis and real-world field trials from conversational noise, the classifier helps climbers quickly filter threads for substantive technical insights.
 
 ---
 
 ## Label Taxonomy
 
-<!-- Each label: a one-sentence definition and two real examples from your
-     reading. Then your decision rule for the hardest boundary.
+### `technical_analysis`
 
-     The decision rule is worth a point on its own and it's the thing most
-     people leave out. Every taxonomy has a hardest boundary. Name yours. -->
-
-### `label_one`
-
-**Definition:**
+**Definition:** Argues mechanics, specs, weights, certifications, or comparative trade-offs.
 
 **Example 1:**
->
+> "Both the Pinch and RIG are EN 12841-C (work positioning and descending a human) and 15151-1 (for belaying and descending only, requires a hand on the brake), unlike most assisted belay devices which are just 15151-1. In the rope access world, the RIG's lack of anti-panic has made it a bit harder to market, because it's way the hell easier to use than an ID but for less experienced techs it's less safe."
 
 **Example 2:**
->
+> "Petzl spirit 45g Plenty of options sub 50g why would someone not use a compact lightweight carabiner for this? there isn’t “the” carabiner the grigri requires. They all work. And you probably already have one… It doesn’t really matter anyway but what you said is just not true. The pinch is significantly (>10%) heavier in every scenario."
 
-### `label_two`
+### `field_experience`
 
-**Definition:**
+**Definition:** First-person reports of using/handling the gear in gyms or crags.
 
 **Example 1:**
->
+> "I got to play hands on with one today. It’s cool! The direct attachment to the belay loop is interesting, I see some advantages with this since removes any carabiner failure modes (although it may show to have its own). You can still use a crab if you want though. What’s really cool is that you can orient it in several different ways to create the best option to belay based on your anchor of preferred belay style. ETA: pat, yes, the direct harness attachment is locked. I didn’t see an obvious way for it to come undone accidentally, and it’s slightly awkward to get it on and off the belay loop. The friction teeth seem like a good edition. It does come with an anti panic handle like the dreaded GRIGRI+, but it comes with a tool to deactivate it. It feeds great without needing to touch the device at all."
 
 **Example 2:**
->
+> "Finally got some gym time in with the pinch, I'm stoked. I consider myself a strong grigri proponent but this feeds noticeably smoother. I mainly used it in the direct attach configuration (no carabiner) and appreciated the extra throw distance (though not having a carabiner for the device to flop around on was the best part) Lowering felt slightly more scrunched due to this, but most likely just an ergonomics thing I'll get used to and never think about again after a few sessions."
+
+### `chatter`
+
+**Definition:** Quick questions, purchase availability, one-line opinions, jokes, and thread-drift.
+
+**Example 1:**
+> "Anyone seen the pinch or ohm for sale yet?"
+
+**Example 2:**
+> "My brother in Christ, let me introduce you to the wonderful world of manscaping. ;-)"
 
 ### The hardest boundary
 
-**Which two labels:**
+**Which two labels:** `field_experience` vs. `technical_analysis`
 
 **The decision rule I used every time:**
-<!-- e.g. "If the post names a specific checkable fact, it's `analysis`, even
-     if the tone is heated." -->
-
-
+If the writer explicitly reports hands-on, physical use or trial of the device in person (e.g., testing in a gym, racking on their harness, or climbing at a crag), it is `field_experience`—even if they discuss specs, measurements, or mechanical tradeoffs. Reserve `technical_analysis` strictly for armchair, theoretical, or spec-sheet breakdowns where the writer did not personally operate the hardware.
 
 ---
 
 ## The Dataset
 
-<!-- Where you collected from, how you labelled, your counts, and three hard
-     cases. -->
-
-**Where the posts came from:**
+**Where the posts came from:** Mountain Project Gear Discussion Forum (specifically the multi-page public thread evaluating the Edelrid Pinch, Petzl Grigri/Rig, and assisted braking belay devices).
 
 **How I labelled them:** <!-- Cold first? Pre-labelled with AI and corrected?
 Say so plainly — the disclosure is required, not penalised. -->

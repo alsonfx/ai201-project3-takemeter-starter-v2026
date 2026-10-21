@@ -30,13 +30,13 @@ somewhere you'd honestly call useful.
 form to fill in — a criterion that fits none of them is fine if it names a
 number.
 
-| Area | A question it could answer |
-|---|---|
-| Overall accuracy | How often does it need to be right to be worth using? |
-| Per-label performance | Is one label allowed to be much worse than the others? |
-| Balance | How lopsided can your label counts get before it's a problem? |
-| Consistency | If someone else labelled the same posts, how often should you agree? |
-| Confidence | Should a confident prediction be right more often than an unsure one? |
+| Area                  | A question it could answer                                            |
+| --------------------- | --------------------------------------------------------------------- |
+| Overall accuracy      | How often does it need to be right to be worth using?                 |
+| Per-label performance | Is one label allowed to be much worse than the others?                |
+| Balance               | How lopsided can your label counts get before it's a problem?         |
+| Consistency           | If someone else labelled the same posts, how often should you agree?  |
+| Confidence            | Should a confident prediction be right more often than an unsure one? |
 
 Two things worth knowing before you pick numbers, because both will affect
 whether you hit them:
@@ -51,63 +51,48 @@ whether you hit them:
 
 ---
 
-## 1.
+## 1. Overall accuracy on held-out test data
 
-<!-- Your criterion. It must name a number. -->
-
-
+The model achieves an overall accuracy of at least 0.65 across all three seeds on the held-out test split.
 
 **Why this target:**
-
-
+With three balanced classes, random chance guessing is roughly 0.33. An accuracy of 0.65 requires the model to correctly classify nearly two out of every three posts from an unstructured climbing gear forum.
 
 ---
 
-## 2.
+## 2. Macro F1 across all labels (Balance)
 
-<!-- Your criterion. -->
-
-
+The model achieves a Macro F1 score of at least 0.60 across all three seeds on the held-out test split.
 
 **Why this target:**
-
-
+Macro F1 computes the unweighted arithmetic mean of F1 scores across all three classes, directly testing whether performance is balanced rather than driven entirely by the largest category. If the classifier collapsed and simply guessed the high-volume `chatter` class, overall accuracy might look passable while Macro F1 would crash. A target of 0.60 ensures all three categories have solid recall and precision.
 
 ---
 
-## 3.
+## 3. Per-label F1 for `chatter`
 
-<!-- Your criterion. -->
-
-
+The F1 score for `chatter` is at least 0.70 across all three seeds on the held-out test split.
 
 **Why this target:**
-
-
+`chatter` is likely our largest category and exhibits distinct stylistic and syntactic cues, such as short character length, casual forum slang, jokes, and purchase/link inquiries. Because of it's probable large training presence and it should comfortably achieve a higher threshold of 0.70 across all seeds.
 
 ---
 
-## 4.
+## 4. Per-label F1 for `field_experience`
 
-<!-- Your criterion. -->
-
-
+The F1 score for `field_experience` is at least 0.52 across all three seeds on the held-out test split.
 
 **Why this target:**
-
-
+`field_experience` is likely our smallest class, meaning an F1 computed on it may be significantly between random seeds—misclassifying just one or two posts swings the score by a large amount. A target of 0.52 accounts for this high variance while still holding the model substantially above chance of .33.
 
 ---
 
-## 5.
+## 5. Per-label F1 for `technical_analysis`
 
-<!-- Your criterion. -->
-
-
+The F1 score for `technical_analysis` is at least 0.60 across all three seeds on the held-out test split.
 
 **Why this target:**
-
-
+`technical_analysis` should be concrete markers like numbers, weights in grams, safety certifications (e.g. `EN 12841-C`), and competitor hardware comparisons. However, they share climbing domain terminology with `field_experience` when discussing rope drag and belay loops. A target of 0.60 requires the model to learn the core mechanical arguments without failing if a couple of borderline boundary cases are missed.
 
 ---
 
